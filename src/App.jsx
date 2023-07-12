@@ -12,6 +12,8 @@ function App() {
   function handleCreateTask(e) {
     e.preventDefault()
 
+
+
     const newTask = {
       id: tasks.length,
       content: inputValue,
@@ -52,7 +54,10 @@ function App() {
             className='w-full bg-zinc-800 rounded-sm placeholder:text-zinc-400 text-zinc-200 p-4'
             type="text"
             placeholder='Adicione uma nova tarefa'
+            required
+            onInvalid={(e) => (e.target.setCustomValidity('Adicione uma tarefa'))}
           />
+
           <button className='bg-primaryBlueDark hover:bg-secondaryPurpleDark transition-colors p-4 rounded-sm flex items-center justify-center font-medium text-zinc-200 gap-2'>
             Criar <Plus size={20} />
           </button>
